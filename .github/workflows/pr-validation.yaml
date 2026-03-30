@@ -24,7 +24,7 @@ jobs:
 
       - name: Check formatting (Prettier)
         run: npm run format:check
- 
+  
       - name: Run ESLint
         run: npm run lint
 
@@ -32,9 +32,9 @@ jobs:
         run: npm run type-check
 
       - name: Post PR comment
-      env:
-       GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      run: |
-       gh pr comment ${{ githgub.event.pull_report.number }} \
-        --repo ${{ github.repository }} \
-        --body " **Before merging**, please manually run the [Testing workflow](https://github.com/anandSep1990/CICD_Training/actions/workflows/deploy-report.yml) and confirm it passes."
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh pr comment ${{ github.event.pull_request.number }} \
+          --repo ${{ github.repository }} \
+          --body " **Before merging**, please manually run the [Testing workflow](https://github.com/anandSep1990/CICD_Training/actions/workflows/deploy-report.yml) and confirm it passes.",
