@@ -5,7 +5,7 @@ test.describe('Table test', () => {
     await page.goto('practice-test-table');
     await page.waitForLoadState('domcontentloaded');
     // eslint-disable-next-line no-console
-    console.log('hello');
+    console.log('hello world');
   });
 
   test('select java Advanced only', async ({ page }) => {
